@@ -45,8 +45,26 @@
             </div>
         </div>
         <!-- Button trigger modal -->
-        <modal-component id="modalMarca" titulo="Adicionar Marca"></modal-component>
-
+        <modal-component id="modalMarca" titulo="Adicionar Marca">
+            <template v-slot:conteudo>
+                <div class="form-group">
+                    <input-container-component titulo="Nome da Marca" id="novoNome" id-help="novoNomeHelp" texto-ajuda="Informe o nome da marca">
+                        <input type="text" class="form-control" id="novoNome" aria-describedby="novoNomeHelp"
+                               placeholder="Nome da marca">
+                    </input-container-component>
+                </div>
+                <div class="form-group">
+                    <input-container-component titulo="Imagem" id="novoImagem" id-help="novoImagemHelp" texto-ajuda="Selecione uma imagem png">
+                        <input type="file" class="form-control-file" id="novoImagem" aria-describedby="novoImagemHelp"
+                               placeholder="Imagem da marca">
+                    </input-container-component>
+                </div>
+            </template>
+            <template v-slot:rodape>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <button type="button" class="btn btn-primary">Salvar</button>
+            </template>
+        </modal-component>
 
     </div>
 </template>
